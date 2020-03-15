@@ -1,0 +1,95 @@
+.soon-block {
+	position: relative;
+	z-index: 1;
+	height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
+	min-height: 481px;
+	padding: 20px 0;
+
+	@include media('>=tablet') {
+		min-height: 500px;
+	}
+
+	.soon-logo {
+		position: relative;
+		z-index: 1;
+		display: block;
+		margin: 0 auto 29px;
+		padding: 65px 0;
+		max-width: 280px;
+
+		@include media('>=tablet') {
+			padding: 100px 0;
+			max-width: 400px;
+		}
+
+		.seed {
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			left: 50%;
+			z-index: -1;
+			width: 162px;
+
+			@include media('>=tablet') {
+				width: 242px;
+			}
+
+			img {
+				max-width: none;
+				width: 100%;
+			}
+		}
+	}
+
+	h1 {
+		margin-bottom: 30px;
+
+		@include media('>=tablet') {
+			max-width: 500px;
+			margin: 0 auto 50px;
+		}
+
+		@include media('>=desktop') {
+			margin-bottom: 98px;
+		}
+	}
+}
+
+.logo-list {
+	@extend %listreset;
+	
+	@include media('>=tablet') {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		margin: 0 -5px;
+	}
+
+	@include media('>=desktop') {
+		margin: 0 -21px;
+	}
+
+	li {
+		margin-bottom: 10px;
+		
+		@include media('>=tablet') {
+			padding: 0 5px;
+		}
+
+		@include media('>=desktop') {
+			padding:  0 21px;
+		}
+	}
+
+	a {
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}

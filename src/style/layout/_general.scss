@@ -1,0 +1,34 @@
+img {
+	max-width: 100%;
+	height: auto;	
+	vertical-align: top;
+	border: none;
+}
+
+a,
+button,
+input[type="submit"] {
+	@include animate(opacity visibility border box-shadow background color);
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.bg {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	z-index: -1;
+}
