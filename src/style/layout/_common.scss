@@ -852,3 +852,80 @@ select {
 		}
 	}
 }
+
+.visual {
+	@include v-align(181px);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	color: $white;
+
+	.visual-wrap {
+		padding: 20px 0;
+	}
+}
+
+.pagination {
+	@extend %listreset;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 0 -5px;
+
+
+	li {
+		padding: 0 5px;
+	}
+
+	a {
+		width: 40px;
+		border: 1px solid $red;
+		background: $white;
+		display: block;
+		height: 40px;
+		line-height: 40px;
+		color: $red;
+		text-align: center;
+
+		&:hover {
+			background: $red;
+			color: $white;
+		}
+
+		&.disabled,
+		&:disabled {
+			pointer-events: none;
+			border-color: #d2d2d2;
+			color: #d2d2d2;
+		}
+
+		&.first {
+			.icon-angle-left {
+
+				&:before {
+					margin-right: -2px;
+				}
+
+				&:after {
+					@extend .icon-angle-left:before;
+					margin-left: -2px;
+				}
+			}
+		}
+
+		&.last {
+			.icon-angle-right {
+
+				&:before {
+					margin-right: -2px;
+				}
+
+				&:after {
+					margin-left: -2px;
+					@extend .icon-angle-right:before;
+				}
+			}
+		}
+	}
+}
