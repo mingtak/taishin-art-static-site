@@ -1,0 +1,162 @@
+#footer {
+	background: #e6e6e6;
+	padding: 35px 20px;
+
+	@include media('>=tablet') {
+		padding: 66px 20px;
+	}
+
+	@include media('>=widescreen') {
+		padding: 66px 123px;
+	}
+}
+
+.footer-list {
+	@extend %listreset;
+	margin: 0 0 64px;
+
+	@include media('>=tablet') {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -5px;
+	}
+
+	> li {
+		margin: 0 0 24px;
+
+		@include media('>=tablet') {
+			width: 50%;
+			padding: 0 5px;
+
+			&.full {
+				width: 100%;
+			}
+		}
+
+		@include media('>=desktop') {
+			margin: 0 0 41px;
+		}
+	}
+
+	.img {
+		ul {
+			@extend %listreset;
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -8px -13px;
+
+			li {
+				margin: 0 0 13px;
+				padding: 0 8px;
+			}
+		}
+	}
+
+	a {
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
+
+.footer-title {
+	font-size: 16px;
+	line-height: 1.625;
+	display: block;
+	margin: 0 0 12px;
+
+	@include media('>=tablet') {
+		line-height: 1.3;
+		margin: 0 0 16px;
+		letter-spacing: 3px;
+	}
+}
+
+.footer-logo {
+	margin: 0 0 70px;
+
+	@include media('>=desktop') {
+		margin: 0 0 56px;
+	}
+}
+
+
+
+
+.footer-col {
+	.logos-list {
+		@extend %listreset;
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -10px;
+
+		@include media('>=tablet') {
+			margin-bottom: 24px;
+		}
+
+		li {
+			padding: 0 10px 5px;
+		}
+	}
+
+	address {
+		font-style: normal;
+		color: #959595;
+		line-height: 24px;
+
+		a {
+			color: #959595;
+
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+}
+
+.footer-row {
+	margin: 0 0 35px;
+
+	@include media('>=tablet') {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	@include media('>=desktop') {
+		margin: 0 0 43px;
+	}
+
+	.footer-col {
+		
+		@include media('>=tablet') {
+			width: 35%;
+		}
+
+		@include media('>=desktop') {
+			width: 40%;
+		}
+
+		&:first-child {
+			
+			@include media('>=tablet') {
+				width: 65%;
+				padding-left: 10px;
+				order: 2;
+			}
+
+			@include media('>=desktop') {
+				width: 60%;
+			}
+		}
+	}
+}
+
+.copyright {
+	display: block;
+	text-transform: uppercase;
+	color: #959595;
+
+	@include media('>=tablet') {
+		font-size: 14px;
+	}
+}
