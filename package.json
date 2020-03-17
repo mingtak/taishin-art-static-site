@@ -54,6 +54,9 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "jquery": "^3.4.1"
+    "imagesloaded": "^4.1.4",
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.4.1",
+    "jquery-bridget": "^2.0.1"
   }
 }
