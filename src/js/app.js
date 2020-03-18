@@ -1,14 +1,16 @@
 if (module.hot) {
 	module.hot.accept();
 }
-
+var $ = require("jquery");
+var jQuery = require("jquery");
 global.jQuery = require('jquery');
 var jQBridget = require('jquery-bridget');
 var Isotope = require('isotope-layout');
 var imagesLoaded = require('imagesLoaded');
+var slick =  require('slick-carousel');
+var AOS = require('aos');
 
 jQuery.bridget( 'isotope', Isotope );
-
 
 
 
@@ -18,7 +20,29 @@ jQuery(function() {
 	initFixedHeader();
 	initSameHeight();
 	initFilter();
+	initSlickSlider();
+	initAos();
 });
+
+function initAos() {
+	AOS.init({
+		duration: 1000,
+		once: true,
+	});
+}
+
+
+
+
+function initSlickSlider() {
+	jQuery(".slider").slick({
+		arrows: false,
+		fade: true,
+		dots: true,
+		slidesToScroll: 1,
+		rows: 0,
+	});
+}
 
 // align blocks height
 function initSameHeight() {
@@ -323,22 +347,22 @@ function initMobileNav() {
 /*
  * jQuery SameHeight plugin
  */
-;(function($){
-	$.fn.sameHeight = function(opt) {
-		var options = $.extend({
-			skipClass: 'same-height-ignore',
-			leftEdgeClass: 'same-height-left',
-			rightEdgeClass: 'same-height-right',
-			elements: '>*',
-			flexible: false,
-			multiLine: false,
-			useMinHeight: false,
-			biggestHeight: false
-		},opt);
-		return this.each(function(){
-			var holder = $(this), postResizeTimer, ignoreResize;
-			var elements = holder.find(options.elements).not('.' + options.skipClass);
-			if(!elements.length) return;
+ ;(function($){
+ 	$.fn.sameHeight = function(opt) {
+ 		var options = $.extend({
+ 			skipClass: 'same-height-ignore',
+ 			leftEdgeClass: 'same-height-left',
+ 			rightEdgeClass: 'same-height-right',
+ 			elements: '>*',
+ 			flexible: false,
+ 			multiLine: false,
+ 			useMinHeight: false,
+ 			biggestHeight: false
+ 		},opt);
+ 		return this.each(function(){
+ 			var holder = $(this), postResizeTimer, ignoreResize;
+ 			var elements = holder.find(options.elements).not('.' + options.skipClass);
+ 			if(!elements.length) return;
 
 			// resize handler
 			function doResize() {
@@ -376,7 +400,7 @@ function initMobileNav() {
 			// handle complete page load including images and fonts
 			$(window).bind('load', delayedResizeHandler);
 		});
-	};
+ 	};
 
 	// detect css min-height support
 	var supportMinHeight = typeof document.documentElement.style.maxHeight !== 'undefined';

@@ -76,6 +76,7 @@ a {
 		left: 0;
 		right: 0;
 		top: 0;
+		border: none;
 		bottom: 0;
 	}
 }
@@ -87,6 +88,7 @@ a {
 .btn {
 	background: $black;
 	color: $white;
+	position: relative;
 	display:inline-block;
 	vertical-align:top;
 	font-size: 16px;
@@ -94,6 +96,7 @@ a {
 	letter-spacing: 4px;
 	padding: 20px 20px;
 	min-width: 210px;
+	border: 1px solid transparent;
 	text-align: center;
 
 	&:hover {
@@ -105,6 +108,31 @@ a {
 
 		&:hover {
 			background: darken($red,10%);
+		}
+	}
+
+	&.btn-outline-red {
+		background: none;
+		color: $red;
+		border-color: $red;
+
+		&:hover {
+			background: $red;
+			color: $white;
+		}
+	}
+
+	&.btn-icon {
+		min-width: 0;
+		padding: 11px 21px 11px 44px;
+		font-size: 16px;
+
+		.icon {
+			position: absolute;
+			left: 19px;
+			top: 50%;
+			font-size: 21px;
+			transform: translateY(-50%);
 		}
 	}
 }
