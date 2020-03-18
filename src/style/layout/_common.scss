@@ -255,10 +255,13 @@ select {
 
 	.side-list {
 		@extend %listreset;
-		display: none;
-
-		@include media('>=tablet') {
-			display: block;
+		
+		@include media('<tablet') {
+			position: absolute;
+			left: 0;
+			top: 0;	
+			opacity: 0;
+			visibility: hidden;
 		}
 
 		li {

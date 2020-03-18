@@ -16,6 +16,7 @@ jQuery.bridget( 'isotope', Isotope );
 
 jQuery(function() {
 	initNavigationSelect();
+	switchTabBySelect();
 	initMobileNav();
 	initFixedHeader();
 	initSameHeight();
@@ -55,6 +56,7 @@ function initSameHeight() {
 
 function initFilter() { 
 	var $container = jQuery('.filter-container');
+	var select = jQuery('.side-holder .nav-select');
 
 	$container.imagesLoaded( function(){
 		$container.isotope({
@@ -113,13 +115,30 @@ function initFixedHeader() {
 	}
 }
 
+function switchTabBySelect() {
+	jQuery('.side-list').each(function(e){
+		var tabSet = jQuery(this);
+		var links = tabSet.find('a');
+		var select = tabSet.siblings('select');
+
+		links.on('click', function(){
+			select.prop('selectedIndex', links.index(jQuery(this)));
+		});
+
+		select.on('change', function(){
+			links.eq(this.selectedIndex).trigger('click');
+		});
+	});
+}
+
 // generate select from navigation
 function initNavigationSelect() {
 	jQuery('.side-list').navigationSelect({
-		activeClass: 'nav-active',
+		levelIndentHTML: '&bull; ',
 		defaultOptionAttr: 'title',
-		levelIndentHTML: ' &amp;bull; ',
-		defaultOptionText: '全部入圍作品'
+		useDefaultOption: false,
+		selectClass: 'select-nav',
+		activeClass: 'active'
 	});
 }
 
@@ -172,7 +191,7 @@ function initMobileNav() {
  		createDefaultOption: function() {
  			if(this.options.useDefaultOption) {
  				var attrText = this.navigation.attr(this.options.defaultOptionAttr);
- 				var defaultOption = $('<option>').addClass(this.options.defaultOptionClass).text(attrText || this.options.defaultOptionText);
+ 				var defaultOption = $('<option>').addClass(this.options.defaultOptionClass).html(attrText || this.options.defaultOptionText);
  				this.navigation.removeAttr(this.options.defaultOptionAttr);
  				this.select.append(defaultOption);
  				this.startIndex = 1;
@@ -205,24 +224,24 @@ function initMobileNav() {
  			return (new Array(level + 1)).join(this.options.levelIndentHTML);
  		},
  		attachEvents: function() {
-			// redirect on select change
-			var self = this;
-			this.select.change(function() {
-				if(this.selectedIndex >= self.startIndex) {
-					location.href = this.value;
-				}
-			});
-		}
-	};
+   // redirect on select change
+   var self = this;
+   this.select.change(function() {
+    // if(this.selectedIndex >= self.startIndex) {
+    //  location.href = this.value;
+    // }
+  });
+ }
+};
 
-	// jquery pluginm interface
-	$.fn.navigationSelect = function(opt) {
-		return this.each(function() {
-			new NavigationSelect($.extend({list: this}, opt));
-		});
-	};
+ // jquery pluginm interface
+ $.fn.navigationSelect = function(opt) {
+ 	return this.each(function() {
+ 		new NavigationSelect($.extend({list: this}, opt));
+ 	});
+ };
 }(jQuery));
-
+ 
 
 /*
  * Simple Mobile Navigation
