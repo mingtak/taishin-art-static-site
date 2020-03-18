@@ -23,7 +23,19 @@ jQuery(function() {
 	initFilter();
 	initSlickSlider();
 	initAos();
+	initSmoothScroll();
 });
+
+function initSmoothScroll() {
+	var btn = jQuery('.btn-scroll');
+
+	btn.on('click', function(e) {
+		e.preventDefault();
+		jQuery('body, html').animate({
+			scrollTop: jQuery(btn.attr('href')).offset().top
+		}, 500);
+	});
+}
 
 function initAos() {
 	AOS.init({
@@ -230,8 +242,8 @@ function initMobileNav() {
     // if(this.selectedIndex >= self.startIndex) {
     //  location.href = this.value;
     // }
-  });
- }
+});
+}
 };
 
  // jquery pluginm interface
@@ -241,7 +253,7 @@ function initMobileNav() {
  	});
  };
 }(jQuery));
- 
+
 
 /*
  * Simple Mobile Navigation

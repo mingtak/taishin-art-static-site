@@ -1665,3 +1665,42 @@ select {
 		}
 	}
 }
+
+.mobile-list {
+	@extend %listreset;
+	position: fixed;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+
+	@include media('>=tablet') {
+		display: none;
+	}
+
+	li {
+		margin-bottom: 8px;
+	}
+
+	a {
+		background: $gold;
+		color: $white;
+		@include size(44px);
+		border-radius: 50%;
+		font-size: 44px;
+		display: block;
+		line-height: 44px;
+		text-align: center;
+		box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+
+		.icon-share {
+			font-size: 25px;
+			line-height: 46px;
+			display: block;
+		}
+
+		&:hover {
+			background: $white;
+			color: $black;
+		}
+	}
+}
