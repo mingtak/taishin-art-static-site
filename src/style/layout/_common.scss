@@ -13,6 +13,10 @@
 		min-height: 500px;
 	}
 
+	@include media('>=widescreen') {
+		min-height: 610px;
+	}
+
 	.container {
 		margin-bottom: 50px;
 		@include media('>=tablet') {
@@ -65,20 +69,6 @@
 		}
 	}
 
-	.bg {
-
-		&:before {
-			content: '';
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			z-index: -1;
-			mix-blend-mode: hard-light;
-			background-image: linear-gradient(to bottom, rgba(17, 17, 17, 0.4), rgba(39, 39, 39, 0.7));
-		}
-	}
 }
 
 .logo-list {
