@@ -13,11 +13,12 @@
 		min-height: 500px;
 	}
 
+
 	.soon-logo {
 		position: relative;
 		z-index: 1;
 		display: block;
-		margin: 0 auto 29px;
+		margin: 0 auto 12px;
 		padding: 65px 0;
 		max-width: 280px;
 
@@ -57,25 +58,41 @@
 			margin-bottom: 98px;
 		}
 	}
+
+	.bg {
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -1;
+			mix-blend-mode: hard-light;
+			background-image: linear-gradient(to bottom, rgba(17, 17, 17, 0.4), rgba(39, 39, 39, 0.7));
+		}
+	}
 }
 
 .logo-list {
 	@extend %listreset;
+	margin-bottom: -20px;
 	
 	@include media('>=tablet') {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		margin: 0 -5px;
+		margin: 0 -5px -20px;
 	}
 
 	@include media('>=desktop') {
-		margin: 0 -21px;
+		margin: 0 -21px -20px;
 	}
 
 	li {
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 		
 		@include media('>=tablet') {
 			padding: 0 5px;
@@ -337,6 +354,23 @@ select {
 
 	&:hover {
 		color: lighten($black,30%);
+	}
+
+	.img {
+		position: relative;
+		z-index: 1;
+		display: block;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 1;
+			background-image: linear-gradient(to bottom, rgba(39, 39, 39, 0.5) 10%, rgba(17, 17, 17, 0) 69%);
+		}
 	}
 
 	img {
@@ -1224,6 +1258,22 @@ select {
 
 	dd {
 		margin: 0 0 7px;
+	}
+
+
+	.blog-img {
+		position: relative;
+		z-index: 1;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-image: linear-gradient(to bottom, rgba(39, 39, 39, 0), rgba(17, 17, 17, 0.4));
+		}
 	}
 
 	.time {
