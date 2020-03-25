@@ -9,7 +9,6 @@
 	z-index: 999;
 	max-width: 1280px;
 	margin: 0 auto;
-	box-shadow: 0 2px 10px rgba(0,0,0,0.25);
 
 	@include media('>=desktop') {
 		display: flex;
@@ -167,7 +166,7 @@
 		}
 
 		@include media('>=widescreen') {
-			margin-left: 6px;
+			margin-left: 12px;
 		}
 	}
 
@@ -175,6 +174,25 @@
 		@extend %listreset;
 		display: flex;
 		flex-wrap: wrap;
+
+		@include media('>=desktop') {
+			position: relative;
+		}
+
+		&:before {
+
+			@include media('>=desktop') {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 25px;
+				background: rgba($black,0.3);
+				width: 1px;
+				margin-top: 2px;
+			}
+		}
 
 		li {
 

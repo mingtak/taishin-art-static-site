@@ -10,6 +10,9 @@
 	<link href="main.css" rel="stylesheet"></head>
 
 	<body>
+		<div class="load-holder">
+			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+		</div>
 		<div id="wrapper">
 			<div class="holder">
 				<header id="header">
@@ -37,17 +40,19 @@
 				</header>
 				<main id="main">
 					<section class="visual-block visual-black">
-						<ul class="breadcrumbs black">
-							<li><a href="#">首頁</a></li>
-							<li><a href="#">入圍作品</a></li>
-							<li><a href="#">《唐朝綺麗男（邱剛健，1985）》</a></li>
-							<li>藝術家訪談</li>
-						</ul>
+						<div class="breadcrumbs-wrap">
+							<ul class="breadcrumbs black">
+								<li><a href="#">首頁</a></li>
+								<li><a href="#">入圍作品</a></li>
+								<li><a href="#">《唐朝綺麗男（邱剛健，1985）》</a></li>
+								<li>藝術家訪談</li>
+							</ul>
+						</div>
 						<div class="visual-holder">
 							<div class="heading" data-aos="fade-right">
 								<div class="heading-wrap">
 									<h1 class="vertical-text">藝術家訪談</h1>
-									<span class="vertical-yellow-txt">副標題副標題副標題副標題 </span>	
+									<div class="breadcrumbs-wrap"><span class="vertical-yellow-txt">副標題副標題副標題副標題 </span>	</div>
 								</div>
 								<a href="#" class="btn btn-outline-red btn-icon"><span class="icon-share icon"></span> 分享</a>
 							</div>

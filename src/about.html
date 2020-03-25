@@ -11,6 +11,9 @@
 </head>
 
 <body>
+	<div class="load-holder">
+		<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+	</div>
 	<div id="wrapper">
 		<div class="holder">
 			<header id="header">
@@ -38,15 +41,19 @@
 			</header>
 			<main id="main">
 				<section class="visual-block" style="background-image: url(/static/images/bg3.png); background-repeat: repeat;">
-					<ul class="breadcrumbs">
-						<li><a href="#">首頁</a></li>
-						<li>關於台新藝術獎</li>
-					</ul>
+					<div class="breadcrumbs-wrap">
+						<ul class="breadcrumbs">
+							<li><a href="#">首頁</a></li>
+							<li>關於台新藝術獎</li>
+						</ul>
+					</div>
 					<div class="visual-holder">
 						<div class="heading" data-aos="fade-right">
 							<div class="heading-wrap">
 								<h1 class="vertical-text white">關於台新藝術獎</h1>
-								<span class="vertical-yellow-txt"></span>
+								<div class="vertical-wrap">
+									<span class="vertical-yellow-txt"></span>
+								</div>
 							</div>
 						</div>
 						<div class="text" data-aos="fade-left">
@@ -87,21 +94,21 @@
 				<section class="gold-block">
 					<ul class="award-list">
 						<li data-aos="fade-up" data-aos-delay="0">
-							<div class="img">
+							<a class="img">
 								<img src="/static/images/icon1.png" alt="image description">
-							</div>
+							</a>
 							<span class="title"><a href="#">第十八屆台新藝術獎 評選辦法</a></span>
 						</li>
 						<li data-aos="fade-up" data-aos-delay="500">
-							<div class="img">
+							<a class="img">
 								<img src="/static/images/icon2.png" alt="image description">
-							</div>
+							</a>
 							<span class="title"><a href="#">第十八屆台新藝術獎 決審委員</a></span>
 						</li>
 						<li data-aos="fade-up" data-aos-delay="1000">
-							<div class="img">
+							<a class="img">
 								<img src="/static/images/icon2.png" alt="image description">
-							</div>
+							</a>
 							<span class="title"><a href="#">第十八屆台新藝術獎 提名觀察人</a></span>
 						</li>
 					</ul>

@@ -147,3 +147,69 @@ h2 {
 		font-size: 32px;
 	}
 }
+
+.lds-ring {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include size(150px);
+	transform: translate(-50%, -50%);
+	@include animate(opacity visibility);
+}
+.lds-ring div {
+	box-sizing: border-box;
+	display: block;
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	border: 14px solid $red;
+	border-radius: 50%;
+	animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	border-color: $red transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+	animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+	animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+	animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+.load-holder {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	background: #f2f2f2;
+	bottom: 0;
+	z-index: 9999999;
+}
+
+html {
+
+	body {
+		overflow: hidden;
+	}
+
+	&.loaded {
+		body {
+			overflow-y: auto;
+		}
+
+		.load-holder {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}

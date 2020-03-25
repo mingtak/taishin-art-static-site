@@ -10,6 +10,9 @@
 	<link href="main.css" rel="stylesheet"></head>
 
 	<body>
+		<div class="load-holder">
+			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+		</div>
 		<div id="wrapper">
 			<div class="holder">
 				<header id="header">
@@ -37,15 +40,17 @@
 				</header>
 				<main id="main">
 					<section class="visual-block visual-black">
-						<ul class="breadcrumbs black">
-							<li><a href="#">首頁</a></li>
-							<li>滾動的四連夜</li>
-						</ul>
+						<div class="breadcrumbs-wrap">
+							<ul class="breadcrumbs black">
+								<li><a href="#">首頁</a></li>
+								<li>滾動的四連夜</li>
+							</ul>
+						</div>
 						<div class="visual-holder">
 							<div class="heading" data-aos="fade-right">
 								<div class="heading-wrap">
 									<h1 class="vertical-text">滾動的四連夜</h1>
-									<span class="vertical-yellow-txt">藝術家面對面</span>	
+									<div class="vertical-wrap"><span class="vertical-yellow-txt">藝術家面對面</span>	</div>
 								</div>
 								<div class="decor-img">
 									<img src="/static/images/decor1.png" alt="image description">

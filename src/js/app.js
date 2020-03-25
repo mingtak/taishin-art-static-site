@@ -12,6 +12,16 @@ var AOS = require('aos');
 
 jQuery.bridget( 'isotope', Isotope );
 
+// loaded state script
+(function(w) {
+	w.addEventListener('load', function() {
+		var loader = document.querySelector('html');
+		if (loader) {
+			loader.classList.add('loaded');
+		}
+	});
+}(window));
+
 
 
 jQuery(function() {
