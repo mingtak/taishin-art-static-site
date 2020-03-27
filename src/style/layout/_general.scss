@@ -64,10 +64,6 @@ a {
 	max-width: 956px;
 	margin: 0 auto;
 
-	@include media('>=desktop') {
-		padding-top: 43.65%;
-	}
-
 	iframe {
 		display:inline-block;
 		vertical-align:top;

@@ -604,7 +604,7 @@ select {
 
 	time {
 		font-size: 14px;
-		font-weight: 600;
+		font-weight: 400;
 		letter-spacing: 1.14px;
 		letter-spacing: 2.63px;
 		display: block;
@@ -620,6 +620,8 @@ select {
 	}
 
 	.txt {
+		font-family: $base-font-sans-serif;
+
 		@include media('>=tablet') {
 			display: block;
 			flex: 1;
@@ -632,7 +634,7 @@ select {
 		display: block;
 		position: relative;
 		padding: 24px 0;
-		border-top: 1px solid $black;
+		border-top: 1px solid #979797;
 		padding-right: 31px;
 
 		@include media('>=tablet') {
@@ -703,7 +705,7 @@ select {
 	padding: 16px 20px;
 
 	@include media('>=widescreen') {
-		padding: 22px 55px 39px;
+		padding: 22px 55px;
 	}
 
 	.breadcrumbs {
@@ -1007,15 +1009,8 @@ select {
 	position: relative;
 	z-index: 1;
 
-	&:before {
-		content: '';
-		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0.6) 95%);
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		z-index: -1;
+	@include media('>=desktop') {
+		@include v-align(235px);
 	}
 
 	.visual-wrap {
@@ -1198,6 +1193,7 @@ select {
 	border: 1px solid #e0e0e0;
 	padding: 20px;
 	font-size: 14px;
+	font-weight: 500;
 	line-height: 26px;
 
 	@include media('>=desktop') {

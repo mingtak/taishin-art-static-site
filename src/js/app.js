@@ -108,6 +108,7 @@ function initFilter() {
 		if (location) {
 			location.hash = f;
 		}
+		initAos();
 	});
 }
 
