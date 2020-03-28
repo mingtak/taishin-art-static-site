@@ -25,16 +25,17 @@
 					<a href="#" class="nav-opener"><span></span></a>
 					<div class="nav-drop">
 						<div class="nav-wrap">
-							<ul>
-								<li><a href="#">最新消息</a></li>
-								<li><a href="#">關於台新藝術獎</a></li>
-								<li><a href="#">入圍作品</a></li>
-								<li><a href="#">對談與講座</a></li>
-								<li><a href="#">空間裝置</a></li>
-								<li><a href="#">我心目中的得主</a></li>
-							</ul>
-							<div class="lang">
-								<a href="#">English</a>
+							<div class="nav-hold">
+								<ul>
+									<li><a href="/news.html">最新消息</a></li>
+									<li><a href="/about.html">關於台新藝術獎</a></li>
+									<li><a href="/#section1" class="scroll">入圍作品</a></li>
+									<li><a href="/spatial-installation.html">空間裝置</a></li>
+									<li><a href="#">我心目中的得主</a></li>
+								</ul>
+								<div class="lang">
+									<a href="#">English</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -44,9 +45,9 @@
 				<section class="visual-block visual-black">
 					<div class="breadcrumbs-wrap">
 						<ul class="breadcrumbs black">
-							<li><a href="#">首頁</a></li>
-							<li><a href="#">入圍作品</a></li>
-							<li><a href="#">《唐朝綺麗男（邱剛健，1985）》</a></li>
+							<li><a href="/">首頁</a></li>
+							<li><a href="/#section1"  class="scroll">入圍作品</a></li>
+							<li><a href="/artwork.html">《唐朝綺麗男（邱剛健，1985）》</a></li>
 							<li>藝術家訪談</li>
 						</ul>
 					</div>
@@ -56,7 +57,14 @@
 								<h1 class="vertical-text">藝術家訪談</h1>
 								<div class="breadcrumbs-wrap"><span class="vertical-yellow-txt">副標題副標題副標題副標題 </span>	</div>
 							</div>
-							<a href="#" class="btn btn-outline-red btn-icon"><span class="icon-share icon"></span> 分享</a>
+							<div class="share-block">
+								<a href="#" class="btn btn-outline-red btn-icon opener"><span class="icon-share icon"></span> 分享</a>
+								<div class="share-holder">
+									<div class="share-wrap">
+										<div class="sharethis-inline-share-buttons"></div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="text" data-aos="fade-left">
 							<div class="img">
@@ -75,7 +83,7 @@
 
 							<p>（採訪撰文／許祐綸）</p>
 							<div class="text-center">
-								<a href="#" class="btn-back">返回作品</a>
+								<a href="/artwork.html" class="btn-back">返回作品</a>
 							</div>
 						</div>
 					</div>
@@ -148,10 +156,16 @@
 				<span class="copyright">COPYRIGHT 2020 Taishin Bank Foundation for Arts and Culture ALL RIGHTS RESERVED</span>
 			</footer>
 			<ul class="mobile-list">
-				<li><a href="#"><span class="icon-box icon"></span></a></li>
-				<li><a href="#"><span class="icon-share icon"></span></a></li>
+				<li><a href="#"> <div class="shapeshifter play" style="background-image: url(/static/images/sprite_60fps.svg)"></div></a></li>
+				<li class="shareit">
+					<a href="#" class="opener"><span class="icon-share icon"></span></a>
+					<div class="drop">
+						<div class="sharethis-inline-share-buttons"></div>
+					</div>
+				</li>
 				<li><a href="#wrapper" class="btn-scroll"><span class="icon-arrow-up icon"></span></a></li>
 			</ul>
 		</div>
 	</div>
-	<script type="text/javascript" src="app.bundle.js"></script></body>
+	<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e7efb0b65b3620019f35d3c&product=inline-share-buttons&cms=sop' async='async'></script>
+</body>

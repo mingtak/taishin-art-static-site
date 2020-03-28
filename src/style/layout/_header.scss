@@ -9,6 +9,7 @@
 	z-index: 999;
 	max-width: 1280px;
 	margin: 0 auto;
+	
 
 	@include media('>=desktop') {
 		display: flex;
@@ -20,8 +21,27 @@
 		padding: 28px 60px;
 	}
 
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		
+		z-index: 99999;
+		@include animate(box-shadow);
+		pointer-events: none;
+	}
+
 	&.header-fixed {
 		position: fixed;
+	}
+
+	.nav-active & {
+		&:before {
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+		}
 	}
 }
 
@@ -47,8 +67,13 @@
 }
 
 #nav {
+	font-size: 18px;
+	line-height: 1.13;
+	text-align: center;
+
 	@include media('>=desktop') {
 		flex: 1;
+		text-align: left;
 		font-size: 16px;
 	}
 
@@ -124,17 +149,24 @@
 	left: 0;
 	right: 0;
 	width: 100%;
-	top: 100%;
+	top: 79px;
+	height: calc(100vh - 79px);
 	max-height: 0;
 	overflow: hidden;
 	@include animate(max-height);
 	z-index: 99;
+
+	@include media('>=tablet') {
+		top: 87px;
+		height: calc(100vh - 87px);
+	}
 
 	@include media('>=desktop') {
 		max-height: none;
 		overflow: visible;
 		position: static;
 		width: auto;
+		height: auto;
 	}
 
 	.nav-active & {
@@ -143,20 +175,38 @@
 
 	.nav-wrap {
 		transform: translateY(-100%);
-		background: $black;
+		background: $white;
 		@include animate(transform);
+		height: 100%;
+		overflow-y: auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
 
 		@include media('>=desktop') {
 			background: none;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: flex-end;
+			display: block;
 			padding-left: 20px;
 			transform: none;	
+			height: auto;
+			overflow: visible;
 		}
 
 		.nav-active & {
 			transform: none;
+		}
+	}
+
+	.nav-hold {
+		width: 100%;
+		padding: 0 62px;
+
+		@include media('>=desktop') {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			padding: 0;
 		}
 	}
 
@@ -168,15 +218,26 @@
 		@include media('>=widescreen') {
 			margin-left: 12px;
 		}
+
+		a {
+			color: #656565;
+			
+			&:hover {
+				color: $red;		
+			}
+		}
 	}
 
 	ul {
 		@extend %listreset;
-		display: flex;
-		flex-wrap: wrap;
+		margin-bottom: 12px;
+		
 
 		@include media('>=desktop') {
 			position: relative;
+			display: flex;
+			margin: 0;
+			flex-wrap: wrap;
 		}
 
 		&:before {
@@ -195,6 +256,7 @@
 		}
 
 		li {
+			padding-bottom: 30px;
 
 			@include media('>=desktop') {
 				padding: 0 10px;
@@ -206,7 +268,7 @@
 
 			&.active {
 				> a {
-					background: $red;
+					color: $red;
 
 					@include media('>=desktop') {
 						background: none;
@@ -219,23 +281,14 @@
 
 	a {
 		display: block;
-		color: $white;
-		background: $black;
-		padding: 7px 20px;
+		color: $black;
 
 		@include media('>=desktop') {
 			background: none;
-			color: $black;
-			padding: 0;
 		}
 
 		&:hover {
-			background: $red;
-
-			@include media('>=desktop') {
-				background: none;
-				color: $red;
-			}
+			color: $red;
 		}
 	}
 }
