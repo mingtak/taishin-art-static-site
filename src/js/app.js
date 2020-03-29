@@ -6,7 +6,7 @@ var jQuery = require("jquery");
 global.jQuery = require('jquery');
 var jQBridget = require('jquery-bridget');
 var Isotope = require('isotope-layout');
-var imagesLoaded = require('imagesLoaded');
+var imagesLoaded = require('imagesloaded');
 var slick =  require('slick-carousel');
 var AOS = require('aos');
 
