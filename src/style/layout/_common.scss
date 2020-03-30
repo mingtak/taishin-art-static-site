@@ -1775,12 +1775,39 @@ select {
 		bottom: 10px;
 	}
 
+	@include media('>=widescreen') {
+		right: 40px;
+		bottom: 40px;
+	}
+
+	@include media('>=1560px') {
+		right: 50%;
+		margin-right: -740px;
+	}
+
 	li {
 		margin-bottom: 8px;
+
+
+		&:last-child {
+			a {
+				background: $white;
+				color: $black;
+
+				&:hover {
+					background: darken($white,20%);
+				}
+			}
+		}
 	}
 
 	.shapeshifter {
 		margin: 5px 0  0 7px;
+
+		@include media('>=desktop') {
+			transform: scale(0.6);
+			margin: 15px 0  0 16px;
+		}
 	}
 
 	.drop {
@@ -1813,15 +1840,26 @@ select {
 		text-align: center;
 		box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
 
+		@include media('>=desktop') {
+			@include size(80px);
+			line-height: 80px;
+			font-size: 45px;
+		}
+
 		.icon-share {
 			font-size: 25px;
 			line-height: 46px;
 			display: block;
+
+			@include media('>=desktop') {
+				font-size: 35px;
+				line-height: 80px;
+			}
 		}
 
+
 		&:hover {
-			background: $white;
-			color: $black;
+			background: darken($gold,20%)
 		}
 	}
 }
@@ -1944,3 +1982,4 @@ select {
 		margin: 7px 0 0 8px ;
 	}
 }
+
