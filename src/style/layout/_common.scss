@@ -244,7 +244,7 @@ select {
 
 	&:after {
 		@extend .icon-angle-down:before;
-		font: 13px/1 icomoon;
+		font: 13px/1 tsicon;
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
@@ -452,6 +452,27 @@ select {
 			max-width: 380px;
 		}
 	}
+
+	.btn-circle {
+		position: absolute;
+		right: 31px;
+		top: 50%;
+		transform: translateY(-50%);
+		margin-top: 30px;
+
+		@include media('>=tablet') {
+			margin-top: -80px;
+		}
+
+		@include media('>=desktop') {
+			margin: -20% -1% 0 0;
+		}
+
+		@include media('>=widescreen') {
+			margin: -18% 7% 0 0;
+
+		}
+	}
 }
 
 .half-block {
@@ -540,24 +561,7 @@ select {
 		}
 	}
 
-	.btn-circle {
-		position: absolute;
-		right: 31px;
-		top: 50%;
-		transform: translateY(-50%);
-
-		@include media('>=desktop') {
-			top: auto;
-			bottom: 100%;
-			right: 100%;
-			margin: 0 6% 4% 0;
-		}
-
-		@include media('>=widescreen') {
-			margin: 0 14% 4% 0;
-
-		}
-	}
+	
 }
 
 .btn-circle {
@@ -656,17 +660,21 @@ select {
 		}
 
 		&:before {
-			@extend .icon-half-arrow:before;
-			font: 4px/1 icomoon;
+			content: '';
+			background: url(/static/images/half-arrow1.svg) no-repeat;
+			background-size: 100% auto;
 			color: $red;
 			right: 0;
 			top: 50%;
 			position: absolute;
 			transform: translateY(-50%);
 			@include animate(right);
+			width: 20px;
+			height: 4px;
 
 			@include media('>=desktop') {
-				font-size: 7px;
+				width: 37px;
+				height: 7px;
 				right: 20px;
 			}
 		}
@@ -748,7 +756,7 @@ select {
 
 		+ li:before {
 			@extend .icon-angle-right:before;
-			font: 8px/1 icomoon;
+			font: 8px/1 tsicon;
 			position: absolute;
 			left: 0;
 			top: 50%;
@@ -1358,18 +1366,24 @@ select {
 	color: $white;
 
 	&:before {
-		@extend .icon-half-arrow:before;
-		font: 6px/1 icomoon;
+		content: '';
+		width: 33px;
+		height: 6px;
+		background: url('/static/images/half-arrow1-white.svg') no-repeat 0 0 / 100% auto;
 		position: absolute;
 		bottom: 27px;
-		left: 0;
-		right: 0;
+		left: 50%;
+		transform: translateX(-50%);
 		text-align: center;
 	}
 
 	&:hover {
 		background: $white;
 		color: $black;
+
+		&:before {
+			background: url('/static/images/half-arrow1.svg') no-repeat 0 0 / 100% auto;
+		}
 	}
 
 }
