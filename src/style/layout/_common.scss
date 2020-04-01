@@ -146,9 +146,14 @@
 		text-align: center;
 		padding: 20px;
 		margin: 0 auto;
+		font-size: 18px;
 
 		@include media('>=desktop') {
 			padding: 20px 30px;
+		}
+
+		p {
+			margin: 0;
 		}
 
 		div {
@@ -161,10 +166,10 @@
 	}
 
 	.circle-title {
-		font-size: 20px;
 		margin: 0 0 9px;
 		display: block;
 		font-weight: 600;
+		font-size: 24px;
 	}
 }
 
@@ -236,21 +241,6 @@ select {
 
 .side-holder {
 	position: relative;
-
-	// &:before {
-	// 	width: 20px;
-	// 	content: '';
-	// 	background: $white;
-	// 	position: absolute;
-	// 	right: 1px;
-	// 	top: 1px;
-	// 	bottom: 1px;
-	// 	pointer-events:none;
-
-	// 	@include media('>=tablet') {
-	// 		display: none;
-	// 	}
-	// }
 
 	&:after {
 		@extend .icon-angle-down:before;
@@ -329,25 +319,33 @@ select {
 	@include media('>=tablet') {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -10px;
+		margin: 0 -5px;
+	}
+}
+
+.grid-item {
+	width: 100%;
+
+	@include media('>=tablet') {
+		width: 50%;
+	}
+
+	@include media('>=desktop') {
+		width: 33.33%;
 	}
 }
 
 .post-holder {
 	margin: 0 0 25px;
-	width: 100%;
+
 
 	@include media('>=tablet') {
-		width: 50%;
-		padding: 0 10px;
 		margin-bottom: 20px;
 		display: flex;
 		flex-wrap: wrap;
 	}
 
 	@include media('>=desktop') {
-		width: 33.33%;
-		padding: 0 12px;
 		margin-bottom: 22px;
 	}
 }
@@ -359,6 +357,11 @@ select {
 
 	@include media('>=tablet') {
 		width: 100%;
+		margin: 0 5px;
+	}
+
+	@include media('>=desktop') {
+		margin: 0 12px; 
 	}
 
 	&:hover {
@@ -452,7 +455,7 @@ select {
 }
 
 .half-block {
-	background: $red;
+	background: #c62b28;
 	color: $white;
 	width: 100%;
 	position: relative;
@@ -565,6 +568,11 @@ select {
 	line-height: 70px;
 	font-size: 74px;
 	display: block;
+
+	@include media('>=desktop') {
+		@include size(80px);
+
+	}
 
 	&:hover {
 		background: darken($red,10%);
@@ -783,6 +791,10 @@ select {
 	}
 }
 
+#main {
+	position: relative;
+}
+
 .visual-block {
 	padding: 20px 20px;
 	color: $white;
@@ -889,6 +901,10 @@ select {
 			margin: 0 0 35px;
 		}
 	}
+
+	.img-wrap {
+		max-width: 563px;
+	}
 }
 
 .vertical-text {
@@ -918,7 +934,7 @@ select {
 	font-size: 14px;
 	line-height: 1.3;
 	min-height: 60%;
-	background: #ffe61a;
+	background: rgba(#ffe61a, 0.6);
 	display: block;
 	font-weight: 700;
 }
@@ -1403,20 +1419,43 @@ select {
 	font-weight: 700;
 
 	&:before {
-		@extend .icon-half-arrow:before;
+		content: '';
+		background: url(/static/images/half-arrow.svg) no-repeat 0 0;
+		width: 27px;
 		position: absolute;
-		font: 5px/1 icomoon;
-		top: 50%;
 		left: 0;
-		transform: translateY(-50%) rotate(180deg) scale(1,-1);
+		top: 50%;
+		transform: translateY(-50%);
+		height: 6px;
+		@include animate(left);
 	}
 
 	&:hover {
-		color: $black;
+		&:before {
+			left: -10px;
+		}
 	}
 }
 
 .slider {
+
+	.slick-track {
+		display: flex;
+
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+
+	.slide {
+		display: flex;
+		flex-wrap: wrap;
+		float: none;
+		height: auto;
+		min-height: 0;
+	}
+
 	.text {
 		background: #414141;
 		color: $white;
@@ -1761,6 +1800,22 @@ select {
 	}
 }
 
+.banner {
+	position: relative;
+	z-index: 999999;
+
+	&:before {
+		content: '';
+		left: 100%;
+		width: 150px;
+		top: 0;
+		bottom: 0;
+		background: #f2f2f2;
+		position: absolute;
+
+	}
+}
+
 .mobile-list {
 	@extend %listreset;
 	position: fixed;
@@ -1778,6 +1833,11 @@ select {
 	@include media('>=widescreen') {
 		right: 40px;
 		bottom: 40px;
+	}
+
+	@include media('>=1280px') {
+		right: 50%;
+		margin-right: -630px;
 	}
 
 	@include media('>=1560px') {
@@ -1980,6 +2040,20 @@ select {
 	.shapeshifter {
 		transform: scale(0.7);
 		margin: 7px 0 0 8px ;
+
+		@include media('>=desktop') {
+			transform: scale(0.85);
+			margin: 3px 0 0 5px;
+		}
 	}
 }
 
+
+
+.caption-txt {
+	color: #656565;
+	font-size: 14px;
+	line-height: 1.857;
+	text-align: right;
+	display: block;
+}

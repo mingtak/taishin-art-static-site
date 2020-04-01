@@ -57,7 +57,7 @@ a {
 }
 
 .video-holder {
-	padding-top: 56.25%;
+	padding-top: 43.67%;
 	overflow: hidden;
 	height: 0;
 	position: relative;
@@ -206,6 +206,25 @@ html {
 		.load-holder {
 			opacity: 0;
 			visibility: hidden;
+		}
+	}
+}
+
+
+.num-list {
+	@extend %listreset;
+	counter-reset: section;
+
+	li {
+		padding-left: 17px;
+		position: relative;
+
+		&:before {
+			counter-increment: section;
+			content: counter(section)".";
+			position: absolute;
+			left: 0;
+			top: 0;
 		}
 	}
 }

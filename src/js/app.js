@@ -80,20 +80,6 @@ function initSmoothScroll() {
 			scrollTop: jQuery(btn.attr('href')).offset().top
 		}, 500);
 	});
-
-	
-
-	var scroll = jQuery('.scroll');
-	scroll.on('click', function(e) {
-		e.preventDefault();
-		var target = $(this).attr('href'), $target = $(target); {
-			$('html, body').stop().animate({
-				'scrollTop' : $target.offset().top - jQuery('#header').outerHeight()
-			}, 900, 'swing', function() {
-				window.location.hash = target;
-			});
-		}
-	});
 }
 
 function initAos() {
@@ -132,7 +118,10 @@ function initFilter() {
 	$container.imagesLoaded( function(){
 		$container.isotope({
 			itemSelector: '.grid-item',
-			layoutMode: 'fitRows' 
+			layoutMode: 'fitRows' ,
+			resize: true,
+			gutter: 0,
+			isFitWidth: true,
 		});
 	});
 
