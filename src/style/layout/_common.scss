@@ -412,6 +412,7 @@ select {
 	font-size: 18px;
 	letter-spacing: 1.13px;
 	line-height: 1.444;
+	color: #111;
 
 	@include media('>=tablet') {
 		padding: 20px 15px 0;
@@ -447,6 +448,32 @@ select {
 		}
 	}
 
+	.time {
+		font-size: 15px;
+		margin-top: 40px;
+		padding-right: 67px;
+		position: relative;
+
+		@include media('>=tablet') {
+			padding-right: 95px;
+			text-align: right;
+		}
+
+		@include media('>=desktop') {
+			font-size: 22px;
+			line-height: 1.455;
+			padding-right: 0;
+			margin-top: 54px;
+			margin-right: -30px;
+			padding-left: 120px;
+			margin-bottom: -145px;
+		}
+
+		@include media('>=widescreen') {
+			margin-top: 74px;
+		}
+	}
+
 	.text {
 		@include media('>=desktop') {
 			max-width: 380px;
@@ -455,22 +482,16 @@ select {
 
 	.btn-circle {
 		position: absolute;
-		right: 31px;
+		right: 0;
 		top: 50%;
 		transform: translateY(-50%);
-		margin-top: 30px;
-
-		@include media('>=tablet') {
-			margin-top: -80px;
-		}
 
 		@include media('>=desktop') {
-			margin: -20% -1% 0 0;
+			right: -78px;
 		}
 
 		@include media('>=widescreen') {
-			margin: -18% 7% 0 0;
-
+			right: -88px;
 		}
 	}
 }
@@ -574,8 +595,7 @@ select {
 	display: block;
 
 	@include media('>=desktop') {
-		@include size(80px);
-
+		@include size(70px);
 	}
 
 	&:hover {
@@ -834,6 +854,10 @@ select {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+
+		&.heading-en {
+			width: auto;
+		}
 	}
 
 	&.visual-black {
@@ -887,6 +911,17 @@ select {
 		line-height: 1.889;
 	}
 
+	&.visual-en {
+		letter-spacing: 0;
+
+		.vertical-text {
+			width: auto;
+			display: block;
+			text-align: left;
+			margin: 0;
+		}
+	}
+
 	.text {
 		@include media('>=tablet') {
 			flex: 1;
@@ -900,6 +935,29 @@ select {
 		&.text-md {
 			@include media('>=tablet') {
 				max-width: 790px;
+			}
+		}
+	}
+
+	.text-wrap {
+		@include media('>=tablet') {
+			padding-left: 195px;
+			position: relative;
+		}
+
+		.share-block {			
+			@include media('>=tablet') {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+
+			.sharethis-inline-share-buttons {
+				text-align: left !important;
+
+				@include media('>=tablet') {
+					text-align: center !important;
+				}
 			}
 		}
 	}
@@ -947,6 +1005,18 @@ select {
 	font-weight: 700;
 }
 
+.horizontal-yellow-txt {
+	display:inline-block;
+	vertical-align:top;
+	min-height: 17px;
+	min-width: 270px;
+	margin-bottom: 20px;
+	background: rgba(#ffe61a, 0.6);
+
+	@include media('>=desktop') {
+		margin: 0 0 40px;
+	}
+}
 
 
 .circle-block {
@@ -1880,7 +1950,7 @@ select {
 
 		@include media('>=desktop') {
 			transform: scale(0.6);
-			margin: 15px 0  0 16px;
+			margin: 9px 0  0 11px;
 		}
 	}
 
@@ -1915,8 +1985,8 @@ select {
 		box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
 
 		@include media('>=desktop') {
-			@include size(80px);
-			line-height: 80px;
+			@include size(70px);
+			line-height: 70px;
 			font-size: 45px;
 		}
 
@@ -1926,8 +1996,8 @@ select {
 			display: block;
 
 			@include media('>=desktop') {
-				font-size: 35px;
-				line-height: 80px;
+				font-size: 30px;
+				line-height: 70px;
 			}
 		}
 
@@ -2056,8 +2126,8 @@ select {
 		margin: 7px 0 0 8px ;
 
 		@include media('>=desktop') {
-			transform: scale(0.85);
-			margin: 3px 0 0 5px;
+			transform: scale(0.6);
+			margin: 9px 0 0 12px;
 		}
 	}
 }
@@ -2071,3 +2141,32 @@ select {
 	text-align: right;
 	display: block;
 }
+
+
+.horizontal-txt {
+	display:inline-block;
+	vertical-align:top;
+	color: #111;
+	background: #ffe61a;
+	line-height: 1;
+	font-size: 18px;
+	margin: 0 0 49px;
+}
+.container-sm {
+	max-width: 955px;
+	margin: 0 auto;
+}
+
+.en-title {
+	margin-bottom: 18px !important;
+	line-height: 1.3;
+
+	@include media('>=desktop') {
+		font-size: 32px;
+		letter-spacing: 0;
+		margin: 0 0 18px !important;
+	}
+}
+
+
+
