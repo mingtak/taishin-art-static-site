@@ -3017,7 +3017,7 @@
     getState: T
   }
 }, function (t, e, r) {
-  r(109), t.exports = r(404)
+  r(109), t.exports = r(399)
 }, function (t, e, r) {
   r(153), r(367);
   var n = r(52);
@@ -7810,25 +7810,20 @@
 }, function (t, e, r) {}, function (t, e, r) {
   var n = {
     "./fb.svg": 381,
-    "./line-2.svg": 382,
-    "./line.svg": 383,
-    "./logo.png": 384,
-    "./modal-image-overlay.png": 385,
-    "./modal-image-overlay.svg": 386,
-    "./overlay-bg-0.jpg": 387,
-    "./overlay-bg-0.png": 388,
-    "./overlay-bg-1.jpg": 389,
-    "./overlay-bg-2.jpg": 390,
-    "./seed.svg": 391,
-    "./seed2.svg": 392,
-    "./taishin-homepage-logo.svg": 393,
-    "./taishin-logo-horizontal-white.svg": 394,
-    "./test-bg-1.jpg": 395,
-    "./test-bg-2.jpg": 396,
-    "./test-bg-3.jpg": 397,
-    "./test-bg-4.jpg": 398,
-    "./test.png": 399,
-    "./wechat.svg": 400
+    "./line.svg": 382,
+    "./overlay-bg-0.jpg": 383,
+    "./overlay-bg-0.png": 384,
+    "./overlay-bg-1.jpg": 385,
+    "./overlay-bg-2.jpg": 386,
+    "./seed.svg": 387,
+    "./seed2.svg": 388,
+    "./taishin-homepage-logo.svg": 389,
+    "./taishin-logo-horizontal-white.svg": 390,
+    "./test-bg-1.jpg": 391,
+    "./test-bg-2.jpg": 392,
+    "./test-bg-3.jpg": 393,
+    "./test-bg-4.jpg": 394,
+    "./wechat.svg": 395
   };
 
   function o(t) {
@@ -7851,19 +7846,7 @@
   r.r(e), e.default = r.p + "images/fb.svg"
 }, function (t, e, r) {
   "use strict";
-  r.r(e), e.default = r.p + "images/line-2.svg"
-}, function (t, e, r) {
-  "use strict";
   r.r(e), e.default = r.p + "images/line.svg"
-}, function (t, e, r) {
-  "use strict";
-  r.r(e), e.default = r.p + "images/logo.png"
-}, function (t, e, r) {
-  "use strict";
-  r.r(e), e.default = r.p + "images/modal-image-overlay.png"
-}, function (t, e, r) {
-  "use strict";
-  r.r(e), e.default = r.p + "images/modal-image-overlay.svg"
 }, function (t, e, r) {
   "use strict";
   r.r(e), e.default = r.p + "images/overlay-bg-0.jpg"
@@ -7900,9 +7883,6 @@
 }, function (t, e, r) {
   "use strict";
   r.r(e), e.default = r.p + "images/test-bg-4.jpg"
-}, function (t, e, r) {
-  "use strict";
-  r.r(e), e.default = r.p + "images/test.png"
 }, function (t, e, r) {
   "use strict";
   r.r(e), e.default = r.p + "images/wechat.svg"
@@ -7948,7 +7928,7 @@
           case 2:
             return e = t.sent, t.next = 5, e.json();
           case 5:
-            r = t.sent, n = c(r), o.image.src = "./static/images/".concat(n.image), o.title.innerHTML = n.title, o.caption.innerHTML = n.caption, o.link.href = n.link, o.imageLink.href = "/images/".concat(n.imageLink);
+            r = t.sent, n = c(r), o.image.src = "./images/".concat(n.image), o.title.innerHTML = n.title, o.caption.innerHTML = n.caption, o.link.href = n.link, o.imageLink.href = "/images/".concat(n.imageLink);
           case 12:
           case "end":
             return t.stop()
@@ -7963,7 +7943,7 @@
   }
   window.innerWidth, window.addEventListener("resize", (function () {
     window.innerWidth < 680
-  })), i && (o = {
+  })), i && ((o = {
     wrapper: i,
     trigger: document.querySelector(".game-container"),
     close: document.querySelector(".game-modal__close"),
@@ -7978,7 +7958,9 @@
         u.apply(this, arguments)
       }(!1)
     }), 1e3)
-  }))
+  })), i.style.height = "".concat(window.innerHeight, "px"), window.addEventListener("resize", (function () {
+    i.style.height = "".concat(window.innerHeight, "px")
+  })))
 }, function (t, e) {
   function r(t) {
     return function (t) {
@@ -8174,9 +8156,9 @@
             duration: 0
           }), n.call(g, null, ">0.25"), n.to(t, {
             top: .75 * a.height - a.seedWidth * (2 / 3),
-            duration: 1,
+            duration: 1.5,
             rotation: 80,
-            ease: "power1.in",
+            ease: "power2.in",
             delay: .4
           }), n.to(a.overlay1, {
             opacity: 1,
@@ -8256,7 +8238,7 @@
 }, function (t, e, r) {
   "use strict";
   r.r(e);
-  r(109), r(152), r(377), r(378), r.p, r(379), r(401), r(402), r(403);
+  r(109), r(152), r(377), r(378), r.p, r(379), r(396), r(397), r(398);
   var n;
   (n = r(380)).keys().map(n)
 }]);

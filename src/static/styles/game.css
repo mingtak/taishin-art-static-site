@@ -60,8 +60,8 @@
 
 @media screen and (max-width: 1260px) {
   .seed {
-    width: 115px;
-    height: 115px;
+    width: 105px;
+    height: 105px;
   }
 }
 
@@ -162,6 +162,7 @@ body {
 .game-container {
   width: 56.7%;
   display: flex;
+  flex-shrink: 0;
   position: relative;
   background: #e5e5e5;
 }
@@ -422,16 +423,28 @@ body {
   flex-shrink: 0;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-height: 680px) {
   .game-modal {
-    height: 100vh;
-    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 }
 
 .game-modal--open {
   opacity: 1;
   pointer-events: auto;
+}
+
+.game-modal__image-overlay {
+  width: 120%;
+  height: 43.8%;
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .game-modal__image-link {
@@ -501,8 +514,8 @@ body {
 
 .game-modal__window {
   width: 66%;
-  height: auto;
-  max-height: 85%;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -515,21 +528,18 @@ body {
 @media screen and (max-height: 900px) {
   .game-modal__window {
     width: 350px;
-    max-height: 90%;
+  }
+}
+
+@media screen and (max-height: 620px) {
+  .game-modal__window {
+    margin-top: 40px;
   }
 }
 
 @media screen and (max-width: 680px) {
   .game-modal__window {
-    height: auto;
     max-width: 90vw;
-  }
-}
-
-@media screen and (max-height: 680px) {
-  .game-modal__window {
-    overflow-y: scroll;
-    overflow-x: hidden;
   }
 }
 
