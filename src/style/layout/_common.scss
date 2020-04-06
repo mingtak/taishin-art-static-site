@@ -220,7 +220,7 @@
 
 .section {
 	padding: 20px 20px;
-	background: url(/static/images/bg1.png);
+	background: url(../static/images/bg1.png);
 
 	@include media('>=tablet') {
 		padding: 40px 20px;
@@ -681,7 +681,7 @@ select {
 
 		&:before {
 			content: '';
-			background: url(/static/images/half-arrow1.svg) no-repeat;
+			background: url(../static/images/half-arrow1.svg) no-repeat;
 			background-size: 100% auto;
 			color: $red;
 			right: 0;
@@ -1439,7 +1439,7 @@ select {
 		content: '';
 		width: 33px;
 		height: 6px;
-		background: url('/static/images/half-arrow1-white.svg') no-repeat 0 0 / 100% auto;
+		background: url('../static/images/half-arrow1-white.svg') no-repeat 0 0 / 100% auto;
 		position: absolute;
 		bottom: 27px;
 		left: 50%;
@@ -1452,7 +1452,7 @@ select {
 		color: $black;
 
 		&:before {
-			background: url('/static/images/half-arrow1.svg') no-repeat 0 0 / 100% auto;
+			background: url('../static/images/half-arrow1.svg') no-repeat 0 0 / 100% auto;
 		}
 	}
 
@@ -1504,7 +1504,7 @@ select {
 
 	&:before {
 		content: '';
-		background: url(/static/images/half-arrow.svg) no-repeat 0 0;
+		background: url(../static/images/half-arrow.svg) no-repeat 0 0;
 		width: 27px;
 		position: absolute;
 		left: 0;
