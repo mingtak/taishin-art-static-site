@@ -399,6 +399,7 @@ select {
 		font-size: 16px;
 		margin: 0 0 4px;
 		display: block;
+		min-height: 48px;
 	}
 
 	p {
@@ -1083,7 +1084,11 @@ select {
 	.title {
 		color: $white;
 		font-size: 18px;
-		font-weight: 700;
+		font-weight: 400;
+
+		@include media('>=desktop') {
+			font-size: 20px;
+		}
 
 		a {
 			color: $white;
@@ -1096,7 +1101,7 @@ select {
 }
 
 .visual {
-	@include v-align(181px);
+	@include v-align(156px);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -1105,7 +1110,7 @@ select {
 	z-index: 1;
 
 	@include media('>=desktop') {
-		@include v-align(235px);
+		@include v-align(156px);
 	}
 
 	.visual-wrap {
