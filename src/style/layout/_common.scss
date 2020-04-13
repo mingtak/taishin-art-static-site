@@ -680,10 +680,7 @@ select {
 			letter-spacing: 3.75px;
 		}
 
-		&:before {
-			content: '';
-			background: url(../static/images/half-arrow1.svg) no-repeat;
-			background-size: 100% auto;
+		img {
 			color: $red;
 			right: 0;
 			top: 50%;
@@ -701,7 +698,7 @@ select {
 		}
 
 		&:hover {
-			&:before {
+			img {
 				right: -10px;
 
 				@include media('>=desktop') {
@@ -1365,6 +1362,7 @@ select {
 	color: $white;
 	line-height: 1.8;
 	font-size: 14px;
+
 	dl {
 		margin: 0;
 		color: rgba(255, 255, 255, 0.66);
@@ -1409,6 +1407,15 @@ select {
 
 	.text-wrap {
 		padding-right: 90px;
+		padding-left: 0;
+
+		@include media('>=tablet') {
+			padding-left: 0;
+		}
+
+		@include media('>=desktop') {
+			padding-left: 0;
+		}
 	}
 
 	.text {
@@ -1440,25 +1447,23 @@ select {
 	border: 1px solid $white;
 	color: $white;
 
-	&:before {
-		content: '';
+	img {
 		width: 33px;
 		height: 6px;
-		background: url('../static/images/half-arrow1-white.svg') no-repeat 0 0 / 100% auto;
 		position: absolute;
 		bottom: 27px;
 		left: 50%;
 		transform: translateX(-50%);
 		text-align: center;
+		@include animate(margin);
 	}
 
 	&:hover {
-		background: $white;
-		color: $black;
-
-		&:before {
-			background: url('../static/images/half-arrow1.svg') no-repeat 0 0 / 100% auto;
+		
+		img {
+			margin-left: 10px;
 		}
+		
 	}
 
 }
@@ -1507,9 +1512,7 @@ select {
 	font-size: 18px;
 	font-weight: 700;
 
-	&:before {
-		content: '';
-		background: url(../static/images/half-arrow.svg) no-repeat 0 0;
+	img {
 		width: 27px;
 		position: absolute;
 		left: 0;
@@ -1519,8 +1522,10 @@ select {
 		@include animate(left);
 	}
 
+	
+
 	&:hover {
-		&:before {
+		img {
 			left: -10px;
 		}
 	}
