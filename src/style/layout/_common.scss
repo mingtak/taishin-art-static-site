@@ -1916,14 +1916,12 @@ select {
 	@extend %listreset;
 	position: fixed;
 	right: 10px;
-	top: 50%;
-	transform: translateY(-50%);
+	top: auto;
+	bottom: 10px;
 	z-index: 9999;
 
 	@include media('>=tablet') {
 		transform: none;
-		top: auto;
-		bottom: 10px;
 	}
 
 	@include media('>=widescreen') {
