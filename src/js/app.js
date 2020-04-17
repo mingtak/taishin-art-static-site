@@ -10,8 +10,9 @@ var imagesLoaded = require('imagesloaded');
 var slick =  require('slick-carousel');
 var AOS = require('aos');
 
-jQuery.bridget( 'isotope', Isotope );
-
+jQuery(document).ready(function() {
+	jQuery.bridget( 'isotope', Isotope );
+});
 
 
 jQuery(function() {
