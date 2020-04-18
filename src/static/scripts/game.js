@@ -1280,7 +1280,7 @@
     return o.call(t, e)
   }
 }, function (t, e) {
-  t.exports = "\t\n\v\f\r                　\u2028\u2029\ufeff"
+  t.exports = "\t\n\v\f\r                　\u2028\u2029\ufeff"
 }, function (t, e, r) {
   var n = r(3),
     o = r(44);
@@ -1764,7 +1764,7 @@
     o = r(77);
   t.exports = function (t) {
     return n((function () {
-      return !!o[t]() || "​᠎" != "​᠎" [t]() || o[t].name !== t
+      return !!o[t]() || "​᠎" != "​᠎" [t]() || o[t].name !== t
     }))
   }
 }, function (t, e) {
@@ -7928,7 +7928,13 @@
           case 2:
             return e = t.sent, t.next = 5, e.json();
           case 5:
-            r = t.sent, n = c(r), o.image.src = "./images/".concat(n.image), o.title.innerHTML = n.title, o.caption.innerHTML = n.caption, o.link.href = n.link, o.imageLink.href = "/images/".concat(n.imageLink);
+            r = t.sent, n = c(r),
+                o.image.src = n.image,
+                o.title.innerHTML = n.title,
+                o.caption.innerHTML = n.caption, o.link.href = n.link,
+                o.imageLink.href = n.imageLink,
+                o.fb.href = n.fb,
+                o.line.href = n.line;
           case 12:
           case "end":
             return t.stop()
@@ -7951,6 +7957,8 @@
     title: document.querySelector(".game-modal__image-title-text"),
     caption: document.querySelector(".game-modal__caption"),
     link: document.querySelector(".game-modal__button-link"),
+    fb: document.querySelector(".game-modal__share-button-fb"),
+    line: document.querySelector(".game-modal__share-button-line"),
     imageLink: document.querySelector(".game-modal__image-link")
   }).close.addEventListener("click", (function (t) {
     t.stopPropagation(), o.wrapper.classList.remove("game-modal--open"), a.classList.remove("stop-scroll"), setTimeout((function () {
@@ -8242,3 +8250,4 @@
   var n;
   (n = r(380)).keys().map(n)
 }]);
+
