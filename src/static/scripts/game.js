@@ -7924,7 +7924,7 @@
       return regeneratorRuntime.wrap((function (t) {
         for (;;) switch (t.prev = t.next) {
           case 0:
-            return t.next = 2, fetch("https://api.myjson.com/bins/1e9gq8");
+            return t.next = 2, fetch("http://award.taishinart.org.tw/@@game_return_json");
           case 2:
             return e = t.sent, t.next = 5, e.json();
           case 5:
